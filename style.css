@@ -1,0 +1,345 @@
+
+:root {
+  --bg: #050b16;
+  --text: #cfeeff;
+  --accent: #28d7ff;
+  --gold: #f5b942;
+  --yellow: #ffc933;
+  --font: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  line-height: 1.6;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(40, 215, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 215, 255, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+h1, h2 {
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(40, 215, 255, 0.6);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- Header and navigation ---------- */
+
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(11, 18, 32, 0.95);
+  border-bottom: 1px solid var(--accent);
+  z-index: 10;
+}
+
+nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Layout ---------- */
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section {
+  padding: 4rem 0;
+  scroll-margin-top: 4rem;
+}
+
+#home {
+  min-height: 80vh;
+}
+
+/* ---------- Skills ---------- */
+
+.skills {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 0.9rem;
+}
+
+.skills li {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: rgba(40, 215, 255, 0.08);
+}
+
+/* ---------- Projects ---------- */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid rgba(40, 215, 255, 0.35);
+  border-top: 2px solid var(--gold);
+  border-radius: 8px;
+  background: rgba(10, 25, 45, 0.7);
+  box-shadow: 0 0 16px rgba(40, 215, 255, 0.15);
+}
+
+.card h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+}
+
+.card a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-name {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.email {
+  display: inline-block;
+  margin: 0.5rem 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+  word-break: break-word;
+}
+
+.social {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social a {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social a:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ---------- Jarvis avatar ---------- */
+
+.avatar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-core {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #3a2a05, #050b16);
+  border: 2px solid var(--yellow);
+  box-shadow: 0 0 25px rgba(255, 201, 51, 0.7),
+              inset 0 0 15px rgba(255, 201, 51, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--yellow);
+  text-shadow: 0 0 10px var(--yellow);
+}
+.avatar-core {
+  overflow: hidden;
+}
+
+.avatar-core img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px rgba(255, 201, 51, 0.8));
+}
+
+.ring1 {
+  inset: 0;
+  border: 2px dashed var(--yellow);
+  animation: spin 14s linear infinite;
+}
+
+.ring2 {
+  inset: 16px;
+  border: 3px solid transparent;
+  border-top-color: var(--yellow);
+  border-bottom-color: var(--yellow);
+  animation: spin 7s linear infinite reverse;
+}
+
+.ring3 {
+  inset: 32px;
+  border: 2px dotted var(--yellow);
+  animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Boot line ---------- */
+
+.boot {
+  color: var(--yellow);
+  font-family: "Courier New", monospace;
+  letter-spacing: 2px;
+  text-align: center;
+  min-height: 1.6em;
+  margin-bottom: 0.5rem;
+}
+
+.boot::after {
+  content: "_";
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ---------- Command box ---------- */
+
+.cmd {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 420px;
+  margin: 1.5rem auto 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--yellow);
+  border-radius: 6px;
+  background: rgba(10, 25, 45, 0.7);
+  box-shadow: 0 0 14px rgba(255, 201, 51, 0.25);
+}
+
+.prompt {
+  color: var(--yellow);
+  font-family: "Courier New", monospace;
+}
+
+.cmd input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+}
+
+.cmd-msg {
+  text-align: center;
+  color: var(--yellow);
+  font-family: "Courier New", monospace;
+  min-height: 1.6em;
+}
+/* ---------- Hover effects ---------- */
+
+.card,
+.skills li {
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.card:hover,
+.skills li:hover {
+  transform: translateY(-4px);
+  border-color: var(--yellow);
+  box-shadow: 0 0 22px rgba(255, 201, 51, 0.45);
+}
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .ring { animation: none; }
+  .boot::after { animation: none; }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  nav {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  section {
+    padding: 2.5rem 0;
+  }
+
+  #home {
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .social {
+    flex-wrap: wrap;
+  }
+}
